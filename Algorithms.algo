@@ -1,0 +1,30 @@
+ALGORITHM SentenceCounter
+VAR
+    ch                          : Character;
+    length, words, vowels       : Integer;
+
+
+BEGIN
+
+  length <-0
+    words<- 1         
+    vowels <-0
+
+    Write "Enter a sentence ending with a period:"
+
+    Repeat
+        Read ch                        // read one character
+        length <-length + 1            // count every character
+
+        If ch is a vowel Then          // a, e, i, o, u (either case)
+            vowels <-vowels + 1
+        Else If ch = ' ' Then
+            words <-words + 1          // a space = new word
+        End If
+
+    Until ch = '.'                     // stop when the point is reached
+
+    Write "Number of characters: ", length
+    Write "Number of words: ", words
+    Write "Number of vowels: ", vowels
+END
